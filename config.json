@@ -1,0 +1,31 @@
+{
+    "models":{
+        "main_model": "Qwen/Qwen2.5-7B-Instruct:together",
+        "second_model": "Qwen/Qwen2.5-14B-Instruct:featherless-ai",
+        "third_model": "meta-llama/Llama-3.1-8B-Instruct:novita"
+    },
+    "classifier_model": "Qwen/Qwen2.5-7B-Instruct:together", 
+    "default_generation": {
+        "temperature": 0.5,
+        "max_tokens": 128,
+        "top_p": 1.0,
+        "frequency_penalty": 0,
+        "presence_penalty": 0
+    },
+    "retrieval":{
+        "top_k": 6,
+        "target_left": 2,
+        "target_center": 2,
+        "target_right": 2
+    },
+    "thresholds": {
+        "stance_confidence": 0.7
+    },
+    "subset": {
+        "size": 100,
+        "seed": 42
+    },
+    "metrics": {
+        "mode": "both"
+    }
+}

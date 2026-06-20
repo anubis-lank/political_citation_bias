@@ -1,0 +1,11 @@
+{
+    "raw_path": "data/raw/israel_palestine_conflict_news_dataset.csv",
+    "id_column": "Article UUID",
+    "text_column": "Article Text",
+    "bias_column": "Political Leaning",
+    "source_column": "Source URL",
+    "title_column": "null",
+    "left_label": "left",
+    "right_label": "right",
+    "event_mode": "hybrid"
+}
