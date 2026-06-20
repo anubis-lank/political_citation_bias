@@ -1,5 +1,5 @@
 {
-    "raw_path": "data/raw/israel_palestine_conflict_news_dataset.csv",
+    "raw_path": "data/raw/<csv file here>",
     "id_column": "Article UUID",
     "text_column": "Article Text",
     "bias_column": "Political Leaning",

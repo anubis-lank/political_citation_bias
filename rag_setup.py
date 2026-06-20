@@ -67,16 +67,12 @@ def generate_answer_with_single_retry(client, model_name: str, base_prompt: str,
     return answer, False
 
 def load_client() -> OpenAI:
-    openai_key = os.getenv("OPEN_API_KEY")
-    openai_base_url = os.getenv("OPENAI_BASE_URL")
     base_url = os.getenv("BASE_URL")
     token = os.getenv("HF_TOKEN")
 
-    if openai_key and openai_base_url:
-        return OpenAI(api_key=openai_key, base_url=openai_base_url)
     if base_url and token:
         return OpenAI(base_url=base_url, api_key=token)
-    raise ValueError("Missing credentials: set OPENAI_API KEY/OPENAI_BASE_URL or BASE_URL/HF_TOKEN in .env")
+    raise ValueError("Missing credentials: set BASE_URL/HF_TOKEN in .env")
 
 def retrieve_condition_docs(
         condition: str,

@@ -1,6 +1,9 @@
 from huggingface_hub import InferenceClient
 import json
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Load configuration from config.json
 config = json.load(open("config.json"))
@@ -15,7 +18,7 @@ class HFModelLoader:
         for model_name in config["models"].values():
             try:
                 client = InferenceClient(
-                    api_key=config["huggingface_api_key"],
+                    api_key=os.getenv("HF_TOKEN"),
                     model=model_name,
                     timeout=30
                 )
