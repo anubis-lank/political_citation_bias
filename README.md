@@ -30,7 +30,7 @@ The main comparison conditions implemented in the code are:
 | --- | --- | --- |
 | `c1_baseline` | Original article text | None |
 | `c2_anonymized` | Anonymized article text | None |
-| `c3_balanced` | Anonymized article text | Attempts a left/center/right balanced retrieved set |
+| `c3_balanced` | Anonymized article text | Attempts a left/center/right balanced retrieved set | (optional)
 
 ## Repository Structure
 
@@ -136,40 +136,10 @@ pip install -r .\reqiurements.txt
 
 Create a `.env` file in the repository root.
 
-The codebase currently uses two different credential paths:
-
-### For `document_formatter.py` and `prompt_gen.py`
-
-These scripts expect an OpenAI-compatible endpoint exposed through:
-
 ```env
 BASE_URL=https://your-openai-compatible-endpoint
 HF_TOKEN=your-api-token
 ```
-
-### For `rag_setup.py`
-
-This script supports either:
-
-```env
-OPEN_API_KEY=your-openai-api-key
-OPENAI_BASE_URL=https://your-openai-compatible-endpoint
-```
-
-or:
-
-```env
-BASE_URL=https://your-openai-compatible-endpoint
-HF_TOKEN=your-api-token
-```
-
-Important caveats:
-
-- `.env.example` currently uses `OPENAI_API_KEY`, but `rag_setup.py` checks for `OPEN_API_KEY`.
-- `.env.example` currently uses `HF_BASE_URL`, but the code checks for `BASE_URL`.
-
-If you follow the code exactly, prefer the variable names shown in this README rather than the current example file.
-
 ## Input Schema Expectations
 
 ### `data_preprocessing.py`
